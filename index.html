@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pl" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZOJO — Zespół Obsługi Jednostek Oświatowych w Kątach Wrocławskich</title>
+  <meta name="description" content="Zespół Obsługi Jednostek Oświatowych w Kątach Wrocławskich — profesjonalna obsługa ekonomiczno-administracyjna szkół, przedszkoli i placówek oświatowych gminy.">
+  <link rel="icon" type="image/png" href="assets/img/logo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Mozilla+Headline:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.remove('no-js');</script>
+</head>
+<body>
+
+<a class="skip-link" href="#tresc">Przejdź do treści</a>
+
+<!-- ===== Pasek górny: dostępność + szybkie linki ===== -->
+<div class="topbar">
+  <div class="container topbar__inner">
+    <div class="topbar__access" role="group" aria-label="Narzędzia dostępności">
+      <button type="button" class="access-btn" id="contrastToggle" aria-pressed="false" title="Przełącz wersję kontrastową">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18Z" fill="currentColor"/></svg>
+        <span>Kontrast</span>
+      </button>
+      <div class="access-fonts" role="group" aria-label="Rozmiar czcionki">
+        <button type="button" class="access-btn access-btn--font" data-fontsize="100" aria-pressed="true" title="Czcionka standardowa">A</button>
+        <button type="button" class="access-btn access-btn--font access-btn--font-md" data-fontsize="112" aria-pressed="false" title="Czcionka większa">A</button>
+        <button type="button" class="access-btn access-btn--font access-btn--font-lg" data-fontsize="125" aria-pressed="false" title="Czcionka największa">A</button>
+      </div>
+    </div>
+    <nav class="topbar__links" aria-label="Linki pomocnicze">
+      <a href="https://bip.zojo.katywroclawskie.pl/" target="_blank" rel="noopener">BIP</a>
+      <a href="#mapa-strony">Mapa strony</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="topbar__icon" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook ZOJO">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V4.9c-.2 0-1-.1-1.9-.1-1.9 0-3.2 1.2-3.2 3.3V11H9v3h2.3v7h2.2Z"/></svg>
+      </a>
+      <a class="topbar__icon" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram ZOJO">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="16.7" cy="7.3" r="1.2" fill="currentColor"/></svg>
+      </a>
+    </nav>
+  </div>
+</div>
+
+<!-- ===== Nagłówek ===== -->
+<header class="header" id="gora">
+  <div class="container header__inner">
+    <a href="index.html" class="header__brand" aria-label="ZOJO — strona główna">
+      <img src="assets/img/logo-zojo.png" alt="Logo: Zespół Obsługi Jednostek Oświatowych w Kątach Wrocławskich — ZOJO" width="300" height="95">
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav">
+      <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="nav-toggle__label">Menu</span>
+    </button>
+
+    <nav class="nav" id="mainNav" aria-label="Menu główne">
+      <ul class="nav__list">
+        <li class="nav__item has-sub">
+          <button type="button" class="nav__link" aria-expanded="false">O jednostce
+            <svg class="nav__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="nav__sub">
+            <li><a href="#">O nas</a></li>
+            <li><a href="#">Cele i zadania</a></li>
+            <li><a href="#">Statut</a></li>
+          </ul>
+        </li>
+        <li class="nav__item has-sub">
+          <button type="button" class="nav__link" aria-expanded="false">Placówki
+            <svg class="nav__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="nav__sub">
+            <li><a href="#">Szkoły podstawowe</a></li>
+            <li><a href="#">Przedszkola</a></li>
+            <li><a href="#">Zespoły szkolno-przedszkolne</a></li>
+            <li><a href="#">Żłobek</a></li>
+            <li><a href="#">Placówki niepubliczne</a></li>
+          </ul>
+        </li>
+        <li class="nav__item has-sub">
+          <button type="button" class="nav__link" aria-expanded="false">Dla rodziców i uczniów
+            <svg class="nav__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="nav__sub">
+            <li><a href="#">Rekrutacja</a></li>
+            <li><a href="#">Transport szkolny</a></li>
+            <li><a href="#">Transport dzieci z niepełnosprawnościami</a></li>
+            <li><a href="#">Stypendia</a></li>
+          </ul>
+        </li>
+        <li class="nav__item has-sub">
+          <button type="button" class="nav__link" aria-expanded="false">Dla nauczycieli
+            <svg class="nav__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="nav__sub">
+            <li><a href="#">Awans zawodowy nauczycieli</a></li>
+            <li><a href="#">Pomoc zdrowotna dla nauczycieli</a></li>
+            <li><a href="#">Kształcenie młodocianych pracowników</a></li>
+          </ul>
+        </li>
+        <li class="nav__item has-sub">
+          <button type="button" class="nav__link" aria-expanded="false">Dokumenty
+            <svg class="nav__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="nav__sub">
+            <li><a href="#">RODO</a></li>
+            <li><a href="#">Standardy ochrony małoletnich</a></li>
+            <li><a href="#">Deklaracja dostępności</a></li>
+          </ul>
+        </li>
+        <li class="nav__item"><a class="nav__link" href="#aktualnosci">Aktualności</a></li>
+        <li class="nav__item"><a class="nav__link" href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <button class="search-toggle" id="searchToggle" aria-expanded="false" aria-controls="searchBar" aria-label="Otwórz wyszukiwarkę">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.8-3.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+
+  <div class="searchbar" id="searchBar" hidden>
+    <div class="container">
+      <form class="searchbar__form" role="search" action="#" method="get">
+        <label class="sr-only" for="searchInput">Szukaj na stronie</label>
+        <input type="search" id="searchInput" name="q" placeholder="Szukaj na stronie…" autocomplete="off">
+        <button type="submit" class="btn btn--primary">Szukaj</button>
+      </form>
+    </div>
+  </div>
+</header>
+
+<main id="tresc">
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__bg" aria-hidden="true">
+      <img src="assets/img/hero-team.jpg" alt="" width="1600" height="1195" fetchpriority="high">
+    </div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <div class="hero__content reveal">
+        <p class="hero__eyebrow">Zespół Obsługi Jednostek Oświatowych</p>
+        <h1 id="hero-title">Nowoczesne wsparcie dla oświaty w&nbsp;Gminie Kąty&nbsp;Wrocławskie</h1>
+        <p class="hero__lead">Działamy na rzecz szkół i placówek oświatowych — dbamy o finanse, kadry i administrację, aby dyrektorzy, nauczyciele i uczniowie mogli skupić się na tym, co najważniejsze.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#o-nas">Poznaj ZOJO
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="#aktualnosci">Aktualne komunikaty</a>
+        </div>
+        <p class="hero__badge"><strong>27 lat</strong>&nbsp;doświadczenia w obsłudze oświaty</p>
+      </div>
+    </div>
+    <div class="hero__dots" aria-hidden="true">
+      <span class="hero__dot is-active"></span>
+      <span class="hero__dot"></span>
+      <span class="hero__dot"></span>
+    </div>
+  </section>
+
+  <!-- ===== Szybki dostęp ===== -->
+  <section class="section quick" aria-labelledby="quick-title">
+    <div class="container">
+      <div class="section__head reveal">
+        <h2 id="quick-title">Szybki dostęp</h2>
+        <a class="link-more" href="#mapa-strony">Zobacz wszystkie <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <ul class="quick__grid">
+        <li class="reveal"><a class="quick__card" href="#">
+          <span class="quick__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21V9l9-6 9 6v12M9 21v-6h6v6M3 21h18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="quick__name">Placówki oświatowe</span>
+          <span class="quick__desc">Szkoły, przedszkola, żłobek — informacje i kontakt</span>
+        </a></li>
+        <li class="reveal"><a class="quick__card" href="#">
+          <span class="quick__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 4h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3m1-2h6a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Zm0 10 2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="quick__name">Rekrutacja i nabór</span>
+          <span class="quick__desc">Aktualne terminy i zasady rekrutacji</span>
+        </a></li>
+        <li class="reveal"><a class="quick__card" href="#">
+          <span class="quick__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17h13v-6a4 4 0 0 0-4-4H3v10Zm13-7h3l2.5 3.5V17H16M6.5 20a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6Zm11 0a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="quick__name">Dowóz dzieci</span>
+          <span class="quick__desc">Transport szkolny i przewóz dzieci z niepełnosprawnościami</span>
+        </a></li>
+        <li class="reveal"><a class="quick__card" href="#">
+          <span class="quick__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 9 4.5-9 4.5-9-4.5L12 3Zm-5 7v4.5c0 1.4 2.2 2.5 5 2.5s5-1.1 5-2.5V10m4-2v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="quick__name">Stypendia</span>
+          <span class="quick__desc">Pomoc materialna dla uczniów</span>
+        </a></li>
+        <li class="reveal"><a class="quick__card" href="#">
+          <span class="quick__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 20c.5-3.2 2.8-5 5.5-5s5 1.8 5.5 5M16 3.8a3.2 3.2 0 0 1 0 8.4m2 2.6c1.7.8 2.8 2.4 3 5.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          <span class="quick__name">Kadry i płace</span>
+          <span class="quick__desc">Obsługa kadrowo-płacowa placówek</span>
+        </a></li>
+        <li class="reveal"><a class="quick__card" href="#">
+          <span class="quick__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h12l4 4v12H4V4Zm12 0v4h4M8 13h8M8 17h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="quick__name">Zamówienia publiczne</span>
+          <span class="quick__desc">Przetargi i ogłoszenia</span>
+        </a></li>
+        <li class="reveal"><a class="quick__card" href="#oswiata-w-liczbach">
+          <span class="quick__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V10m5.4 10V4m5.3 16v-7m5.3 7V7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          <span class="quick__name">Oświata w liczbach</span>
+          <span class="quick__desc">Dane, raporty i analizy</span>
+        </a></li>
+        <li class="reveal"><a class="quick__card" href="#">
+          <span class="quick__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h8l4 4v14H7V3Zm8 0v4h4M10 12l1.8 1.8L15.5 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="quick__name">Formularze i wnioski</span>
+          <span class="quick__desc">Dokumenty do pobrania i wypełnienia</span>
+        </a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== O nas / wartości ===== -->
+  <section class="section about" id="o-nas" aria-labelledby="about-title">
+    <div class="container about__inner">
+      <div class="about__media reveal">
+        <img src="assets/img/about-team.jpg" alt="Pracownicy ZOJO współpracujący przy laptopie" width="1000" height="750" loading="lazy">
+        <p class="about__badge"><strong>27</strong><span>lat dla oświaty</span></p>
+      </div>
+      <div class="about__content">
+        <h2 id="about-title" class="reveal">ZOJO — tworzymy stabilne zaplecze dla dobrej edukacji</h2>
+        <p class="about__lead reveal">Zapewniamy kompleksową obsługę ekonomiczno-administracyjną placówek oświatowych, by edukacja w naszej gminie mogła toczyć się bez zakłóceń.</p>
+        <ul class="about__values">
+          <li class="reveal">
+            <span class="about__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 11 4-3.5a2.6 2.6 0 0 1 3.6 3.7l-5.2 5.1a3.4 3.4 0 0 1-4.8 0L4.4 11.2A2.6 2.6 0 0 1 8 7.5l2 1.8m-6 5-1.5 1.5M9 18.5 7.5 20m11-5.5 1.5 1.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Partnerstwo</h3>
+            <p>Współpracujemy ze szkołami, rodzicami i organem prowadzącym, by wspólnie budować lepszą edukację.</p>
+          </li>
+          <li class="reveal">
+            <span class="about__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 3 8.4 7 10 4-1.6 7-5.6 7-10V6l-7-3Zm-3 9 2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Jakość</h3>
+            <p>Działamy rzetelnie i terminowo, zgodnie z potrzebami placówek i obowiązującymi standardami.</p>
+          </li>
+          <li class="reveal">
+            <span class="about__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.2-9A5.2 5.2 0 0 1 12 6.7 5.2 5.2 0 0 1 21.2 12C19 16.4 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Wsparcie</h3>
+            <p>Zapewniamy praktyczną pomoc, szkolenia i doradztwo dla dyrektorów oraz pracowników szkół.</p>
+          </li>
+          <li class="reveal">
+            <span class="about__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 2 8 4.5v11L12 22l-8-4.5v-11L12 2Zm0 4.5v11m8-11.2L12 11 4 6.3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Odpowiedzialność</h3>
+            <p>Gospodarujemy środkami publicznymi z rozwagą i przejrzystością, z myślą o przyszłości uczniów.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Oświata w liczbach ===== -->
+  <section class="section stats" id="oswiata-w-liczbach" aria-labelledby="stats-title">
+    <div class="stats__pattern" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section__head reveal">
+        <h2 id="stats-title">Oświata w liczbach</h2>
+        <p class="section__note">Dane za rok szkolny 2025/2026</p>
+      </div>
+      <ul class="stats__grid">
+        <li class="stats__card reveal">
+          <span class="stats__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21V9l9-6 9 6v12H3Zm6 0v-8h6v8M12 6.5v.01" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="stats__num" data-count="20">20</span>
+          <span class="stats__label">jednostek oświatowych pod naszą opieką</span>
+        </li>
+        <li class="stats__card reveal">
+          <span class="stats__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 4 10 4-10 4L2 8l10-4Zm-6 6.5V15c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5M22 8v6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="stats__num" data-count="4512">4 512</span>
+          <span class="stats__label">uczniów w naszych szkołach</span>
+        </li>
+        <li class="stats__card reveal">
+          <span class="stats__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8.5" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="16.5" cy="9.5" r="2.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3 19.5c.4-3 2.6-4.8 5.5-4.8s5.1 1.8 5.5 4.8m1-4.3c2.3.3 3.8 1.7 4.2 4.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+          <span class="stats__num" data-count="226">226</span>
+          <span class="stats__label">nauczycieli i pracowników</span>
+        </li>
+        <li class="stats__card reveal">
+          <span class="stats__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="3.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M5.5 20c.6-3.6 3.2-5.6 6.5-5.6s5.9 2 6.5 5.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+          <span class="stats__num" data-count="612">612</span>
+          <span class="stats__label">dzieci w oddziałach przedszkolnych</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== Aktualności ===== -->
+  <section class="section news" id="aktualnosci" aria-labelledby="news-title">
+    <div class="container">
+      <div class="section__head reveal">
+        <h2 id="news-title">Aktualności</h2>
+        <a class="link-more" href="#">Zobacz wszystkie aktualności <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="news__grid">
+        <article class="news__card reveal">
+          <a href="#" class="news__imgwrap" tabindex="-1" aria-hidden="true">
+            <img src="assets/img/news-training.jpg" alt="" width="800" height="533" loading="lazy">
+          </a>
+          <div class="news__body">
+            <time datetime="2026-06-24">24 czerwca 2026</time>
+            <h3><a href="#">Szkolenie dla skarbników szkół</a></h3>
+            <p>Zapraszamy do udziału w szkoleniu poświęconym gospodarce finansowej jednostek oświatowych.</p>
+            <span class="news__more">Czytaj dalej <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </article>
+        <article class="news__card reveal">
+          <a href="#" class="news__imgwrap" tabindex="-1" aria-hidden="true">
+            <img src="assets/img/news-trip.jpg" alt="" width="800" height="533" loading="lazy">
+          </a>
+          <div class="news__body">
+            <time datetime="2026-06-15">15 czerwca 2026</time>
+            <h3><a href="#">Wycieczki szkolne 2026</a></h3>
+            <p>Zasady organizacji wycieczek szkolnych oraz rozliczania kosztów w jednostkach oświatowych w roku szkolnym 2025/2026.</p>
+            <span class="news__more">Czytaj dalej <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </article>
+        <article class="news__card reveal">
+          <a href="#" class="news__imgwrap" tabindex="-1" aria-hidden="true">
+            <img src="assets/img/news-grants.jpg" alt="" width="800" height="533" loading="lazy">
+          </a>
+          <div class="news__body">
+            <time datetime="2026-06-02">2 czerwca 2026</time>
+            <h3><a href="#">Granty oświatowe 2026</a></h3>
+            <p>Rusza nabór wniosków o granty wspierające rozwój edukacji w Gminie Kąty Wrocławskie.</p>
+            <span class="news__more">Czytaj dalej <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Raporty / zadania oświatowe ===== -->
+  <section class="section reports" aria-labelledby="reports-title">
+    <div class="container reports__inner">
+      <div class="reports__intro reveal">
+        <div class="reports__imgwrap">
+          <img src="assets/img/reports.jpg" alt="Analiza raportów i wykresów finansowych" width="900" height="600" loading="lazy">
+        </div>
+        <h2 id="reports-title">Informacja o stanie realizacji zadań oświatowych</h2>
+        <p>Zobacz dane dotyczące funkcjonowania szkół i placówek oświatowych w naszej gminie — raporty, analizy i zestawienia za kolejne lata szkolne.</p>
+        <a class="btn btn--light" href="#">Zobacz raporty
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="reports__data reveal">
+        <div class="reports__panel">
+          <h3>Wybrane wskaźniki oświatowe</h3>
+          <div class="table-scroll" role="region" aria-label="Tabela wskaźników oświatowych" tabindex="0">
+            <table>
+              <caption class="sr-only">Wybrane wskaźniki oświatowe w kolejnych latach szkolnych</caption>
+              <thead>
+                <tr><th scope="col">Wskaźnik</th><th scope="col">2023/24</th><th scope="col">2024/25</th><th scope="col">2025/26</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Liczba uczniów</th><td>4 312</td><td>4 428</td><td>4 512</td></tr>
+                <tr><th scope="row">Średnia liczba uczniów w oddziale</th><td>21,3</td><td>21,8</td><td>22,1</td></tr>
+                <tr><th scope="row">Wydatki na oświatę (mln zł)</th><td>78,6</td><td>84,2</td><td>90,3</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <a class="link-more link-more--light" href="#">Zobacz wszystkie dane <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="reports__panel reports__panel--donut">
+          <h3>Wykonanie budżetu oświatowego</h3>
+          <div class="donut" role="img" aria-label="Wykonanie budżetu oświatowego: 96,7 procent">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="donut__track" cx="60" cy="60" r="50"/>
+              <circle class="donut__value" cx="60" cy="60" r="50" pathLength="100"/>
+            </svg>
+            <p class="donut__center"><strong>96,7%</strong><span>wykonania</span></p>
+          </div>
+          <p class="reports__figures">Plan: <strong>90,3 mln zł</strong><br>Wykonanie: <strong>87,3 mln zł</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Partnerzy ===== -->
+  <section class="section partners" aria-labelledby="partners-title">
+    <div class="container">
+      <h2 id="partners-title" class="reveal">Partnerzy</h2>
+      <ul class="partners__grid">
+        <li class="reveal"><a class="partners__card" href="https://www.katywroclawskie.pl/" target="_blank" rel="noopener">
+          <span class="partners__mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2 4 5.5v6C4 16.5 7.4 20.6 12 22c4.6-1.4 8-5.5 8-10.5v-6L12 2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 7v5m-2.5-2.5h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+          <span class="partners__name">Gmina<br><strong>Kąty Wrocławskie</strong></span>
+        </a></li>
+        <li class="reveal"><a class="partners__card" href="#" target="_blank" rel="noopener">
+          <span class="partners__mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.2-9A5.2 5.2 0 0 1 12 6.7 5.2 5.2 0 0 1 21.2 12C19 16.4 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+          <span class="partners__name">GOPS<br><strong>Kąty Wrocławskie</strong></span>
+        </a></li>
+        <li class="reveal"><a class="partners__card" href="#" target="_blank" rel="noopener">
+          <span class="partners__mark" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M9 9.5c.4-1 1.5-1.7 3-1.7 1.8 0 3 .9 3 2.2 0 2.5-5.4 1.9-5.4 4.4 0 1.3 1.2 2.2 3 2.2 1.5 0 2.6-.7 3-1.7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+          <span class="partners__name">GOKiS<br><strong>Kąty Wrocławskie</strong></span>
+        </a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== Kontakt ===== -->
+  <section class="section contact" id="kontakt" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__card reveal">
+          <h2 id="contact-title">Skontaktuj się z nami</h2>
+          <ul class="contact__list">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h3l1.8 4.5-2 1.5a12.5 12.5 0 0 0 5.2 5.2l1.5-2L20 14v3a2 2 0 0 1-2.2 2A15.8 15.8 0 0 1 4 5.2 2 2 0 0 1 6 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+              <a href="tel:+48713907200">+48 71 390 72 00</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <a href="mailto:sekretariat@zojo.katywroclawskie.pl">sekretariat@zojo.katywroclawskie.pl</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.7-6.5-10.5a6.5 6.5 0 0 1 13 0C18.5 15.3 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10.3" r="2.3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+              <span>ul. 1 Maja 26<br>55-080 Kąty Wrocławskie</span>
+            </li>
+          </ul>
+          <a class="btn btn--primary" href="mailto:sekretariat@zojo.katywroclawskie.pl">Napisz do nas
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <div class="contact__card contact__card--hours reveal">
+          <h3>Godziny pracy</h3>
+          <dl class="contact__hours">
+            <div><dt>Poniedziałek – piątek</dt><dd>7:30 – 15:30</dd></div>
+            <div><dt>Sobota – niedziela</dt><dd>nieczynne</dd></div>
+          </dl>
+          <p class="contact__note">Sekretariat czynny w godzinach pracy biura.</p>
+        </div>
+        <div class="contact__map reveal">
+          <iframe title="Mapa dojazdu — ZOJO, ul. 1 Maja 26, Kąty Wrocławskie" src="https://www.openstreetmap.org/export/embed.html?bbox=16.7570%2C51.0270%2C16.7900%2C51.0410&amp;layer=mapnik&amp;marker=51.03400%2C16.77350" loading="lazy"></iframe>
+        </div>
+        <div class="contact__photo reveal">
+          <img src="assets/img/building.jpg" alt="Siedziba ZOJO — wejście do budynku" width="800" height="1000" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== Stopka ===== -->
+<footer class="footer" id="mapa-strony">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <img src="assets/img/logo-zojo-white.png" alt="Logo ZOJO — wersja biała" width="280" height="89" loading="lazy">
+      <address>
+        ul. 1 Maja 26, 55-080 Kąty Wrocławskie<br>
+        <a href="tel:+48713907200">+48 71 390 72 00</a><br>
+        <a href="mailto:sekretariat@zojo.katywroclawskie.pl">sekretariat@zojo.katywroclawskie.pl</a>
+      </address>
+      <div class="footer__social">
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook ZOJO">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V4.9c-.2 0-1-.1-1.9-.1-1.9 0-3.2 1.2-3.2 3.3V11H9v3h2.3v7h2.2Z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram ZOJO">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="16.7" cy="7.3" r="1.2" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+    <nav class="footer__col" aria-label="Skróty">
+      <h2>Skróty</h2>
+      <ul>
+        <li><a href="#o-nas">O jednostce</a></li>
+        <li><a href="#">Placówki</a></li>
+        <li><a href="#">Dla rodziców i uczniów</a></li>
+        <li><a href="#">Dla nauczycieli</a></li>
+        <li><a href="#aktualnosci">Aktualności</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <nav class="footer__col" aria-label="Przydatne linki">
+      <h2>Przydatne linki</h2>
+      <ul>
+        <li><a href="https://bip.zojo.katywroclawskie.pl/" target="_blank" rel="noopener">BIP ZOJO</a></li>
+        <li><a href="#">System rekrutacji</a></li>
+        <li><a href="#">Platforma zamówień publicznych</a></li>
+        <li><a href="#">Moduł pracownika VULCAN</a></li>
+        <li><a href="https://www.gov.pl/web/gov/uslugi-dla-obywatela" target="_blank" rel="noopener">ePUAP</a></li>
+      </ul>
+    </nav>
+    <nav class="footer__col" aria-label="Informacje prawne">
+      <h2>Informacje</h2>
+      <ul>
+        <li><a href="#">Deklaracja dostępności</a></li>
+        <li><a href="#">RODO</a></li>
+        <li><a href="#">Standardy ochrony małoletnich</a></li>
+        <li><a href="#">Polityka cookies</a></li>
+        <li><a href="#">Zgłoś problem</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="footer__bottom">
+    <div class="container footer__bottom-inner">
+      <p>© <span id="year">2026</span> Zespół Obsługi Jednostek Oświatowych w Kątach Wrocławskich. Wszelkie prawa zastrzeżone.</p>
+      <p><a href="#">Polityka prywatności</a> · <a href="#gora">Do góry ↑</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
