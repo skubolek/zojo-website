@@ -70,6 +70,20 @@
         navToggle.focus();
       }
     }
+    // Pułapka fokusu w otwartym menu mobilnym
+    if (e.key === 'Tab' && document.body.classList.contains('nav-open')) {
+      var nav = document.getElementById('mainNav');
+      var focusables = [navToggle].concat(
+        Array.prototype.slice.call(nav.querySelectorAll('button, a[href]'))
+      );
+      var first = focusables[0];
+      var last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault(); last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault(); first.focus();
+      }
+    }
   });
 
   /* ---------- Wyszukiwarka ---------- */
@@ -181,8 +195,10 @@
       if (s.loading === 'lazy') { s.loading = 'eager'; }
     });
     var heroEl = document.querySelector('.hero');
+    var heroPauseBtn = document.getElementById('heroPause');
     var heroIndex = 0;
     var heroTimer = null;
+    var heroUserPaused = false;
     var HERO_INTERVAL = 6500;
 
     var heroShow = function (i) {
@@ -198,10 +214,21 @@
       if (heroTimer) { clearInterval(heroTimer); heroTimer = null; }
     };
     var heroStart = function () {
-      if (prefersReducedMotion || document.hidden) { return; }
+      if (prefersReducedMotion || document.hidden || heroUserPaused) { return; }
       heroStop();
       heroTimer = setInterval(function () { heroShow(heroIndex + 1); }, HERO_INTERVAL);
     };
+
+    if (heroPauseBtn) {
+      heroPauseBtn.addEventListener('click', function () {
+        heroUserPaused = !heroUserPaused;
+        heroPauseBtn.classList.toggle('is-paused', heroUserPaused);
+        heroPauseBtn.setAttribute('aria-pressed', String(heroUserPaused));
+        heroPauseBtn.setAttribute('aria-label',
+          heroUserPaused ? 'Wznów pokaz slajdów' : 'Zatrzymaj pokaz slajdów');
+        if (heroUserPaused) { heroStop(); } else { heroStart(); }
+      });
+    }
 
     heroDots.forEach(function (dot, i) {
       dot.addEventListener('click', function () { heroShow(i); heroStart(); });
