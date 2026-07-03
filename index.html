@@ -137,7 +137,10 @@
   <!-- ===== Hero ===== -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero__bg" aria-hidden="true">
-      <img src="assets/img/hero-team.jpg" alt="" width="1600" height="1195" fetchpriority="high">
+      <img class="hero__slide is-active" src="assets/img/hero-team.jpg" alt="" width="1600" height="1195" fetchpriority="high">
+      <img class="hero__slide" src="assets/img/hero-classroom.jpg" alt="" width="1920" height="1080" loading="lazy">
+      <img class="hero__slide" src="assets/img/hero-school.jpg" alt="" width="1920" height="1080" loading="lazy">
+      <img class="hero__slide" src="assets/img/hero-consult.jpg" alt="" width="1920" height="1080" loading="lazy">
     </div>
     <div class="hero__overlay" aria-hidden="true"></div>
     <div class="container hero__inner">
@@ -154,15 +157,17 @@
         <p class="hero__badge"><strong>27 lat</strong>&nbsp;doświadczenia w obsłudze oświaty</p>
       </div>
     </div>
-    <div class="hero__dots" aria-hidden="true">
-      <span class="hero__dot is-active"></span>
-      <span class="hero__dot"></span>
-      <span class="hero__dot"></span>
+    <div class="hero__dots" role="group" aria-label="Wybór slajdu">
+      <button type="button" class="hero__dot is-active" aria-label="Slajd 1" aria-current="true"></button>
+      <button type="button" class="hero__dot" aria-label="Slajd 2"></button>
+      <button type="button" class="hero__dot" aria-label="Slajd 3"></button>
+      <button type="button" class="hero__dot" aria-label="Slajd 4"></button>
     </div>
   </section>
 
   <!-- ===== Szybki dostęp ===== -->
   <section class="section quick" aria-labelledby="quick-title">
+    <div class="quick__pattern" data-parallax="0.16" aria-hidden="true"></div>
     <div class="container">
       <div class="section__head reveal">
         <h2 id="quick-title">Szybki dostęp</h2>
@@ -251,7 +256,7 @@
 
   <!-- ===== Oświata w liczbach ===== -->
   <section class="section stats" id="oswiata-w-liczbach" aria-labelledby="stats-title">
-    <div class="stats__pattern" aria-hidden="true"></div>
+    <div class="stats__pattern" data-parallax="0.16" aria-hidden="true"></div>
     <div class="container">
       <div class="section__head reveal">
         <h2 id="stats-title">Oświata w liczbach</h2>

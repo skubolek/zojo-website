@@ -172,6 +172,74 @@
     if (donut) { donut.classList.add('is-filled'); }
   }
 
+  /* ---------- Slider w sekcji hero ---------- */
+  var heroSlides = Array.prototype.slice.call(document.querySelectorAll('.hero__slide'));
+  var heroDots = Array.prototype.slice.call(document.querySelectorAll('.hero__dot'));
+  if (heroSlides.length > 1) {
+    // Dociągnij pozostałe slajdy od razu — muszą być gotowe przed pierwszą zmianą
+    heroSlides.forEach(function (s) {
+      if (s.loading === 'lazy') { s.loading = 'eager'; }
+    });
+    var heroEl = document.querySelector('.hero');
+    var heroIndex = 0;
+    var heroTimer = null;
+    var HERO_INTERVAL = 6500;
+
+    var heroShow = function (i) {
+      heroSlides[heroIndex].classList.remove('is-active');
+      heroDots[heroIndex].classList.remove('is-active');
+      heroDots[heroIndex].removeAttribute('aria-current');
+      heroIndex = (i + heroSlides.length) % heroSlides.length;
+      heroSlides[heroIndex].classList.add('is-active');
+      heroDots[heroIndex].classList.add('is-active');
+      heroDots[heroIndex].setAttribute('aria-current', 'true');
+    };
+    var heroStop = function () {
+      if (heroTimer) { clearInterval(heroTimer); heroTimer = null; }
+    };
+    var heroStart = function () {
+      if (prefersReducedMotion || document.hidden) { return; }
+      heroStop();
+      heroTimer = setInterval(function () { heroShow(heroIndex + 1); }, HERO_INTERVAL);
+    };
+
+    heroDots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () { heroShow(i); heroStart(); });
+    });
+    heroEl.addEventListener('mouseenter', heroStop);
+    heroEl.addEventListener('mouseleave', heroStart);
+    heroEl.addEventListener('focusin', heroStop);
+    heroEl.addEventListener('focusout', heroStart);
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) { heroStop(); } else { heroStart(); }
+    });
+    heroStart();
+  }
+
+  /* ---------- Parallaks wzoru w tle (wrażenie głębi) ---------- */
+  var parallaxLayers = Array.prototype.slice.call(document.querySelectorAll('[data-parallax]'));
+  if (parallaxLayers.length && !prefersReducedMotion) {
+    var ticking = false;
+    var updateParallax = function () {
+      var vh = window.innerHeight;
+      parallaxLayers.forEach(function (layer) {
+        var host = layer.parentElement;
+        var rect = host.getBoundingClientRect();
+        if (rect.bottom < -200 || rect.top > vh + 200) { return; }
+        var factor = parseFloat(layer.getAttribute('data-parallax')) || 0.15;
+        var delta = (vh / 2) - (rect.top + rect.height / 2);
+        layer.style.transform = 'translate3d(0,' + (delta * factor).toFixed(1) + 'px,0)';
+      });
+      ticking = false;
+    };
+    var requestParallax = function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(updateParallax); }
+    };
+    window.addEventListener('scroll', requestParallax, { passive: true });
+    window.addEventListener('resize', requestParallax, { passive: true });
+    updateParallax();
+  }
+
   /* ---------- Rok w stopce ---------- */
   document.getElementById('year').textContent = String(new Date().getFullYear());
 })();

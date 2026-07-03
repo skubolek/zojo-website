@@ -286,11 +286,28 @@ html.no-js .nav__item:focus-within .nav__sub {
   overflow: hidden;
   background: var(--navy-deep);
 }
-.hero__bg { position: absolute; inset: 0; z-index: 0; }
-.hero__bg img {
+.hero__bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.hero__slide {
+  position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
   object-position: 72% center;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  will-change: opacity, transform;
+}
+.hero__slide.is-active {
+  opacity: 1;
+  animation: hero-kenburns 9s ease-out forwards;
+}
+.hero__slide:nth-child(even).is-active { animation-name: hero-kenburns-alt; }
+@keyframes hero-kenburns {
+  from { transform: scale(1) translateX(0); }
+  to   { transform: scale(1.08) translateX(-1.2%); }
+}
+@keyframes hero-kenburns-alt {
+  from { transform: scale(1.08) translateX(1%); }
+  to   { transform: scale(1) translateX(0); }
 }
 .hero__overlay {
   position: absolute; inset: 0; z-index: 1;
@@ -332,14 +349,26 @@ html.no-js .nav__item:focus-within .nav__sub {
   display: flex; gap: .5rem;
 }
 .hero__dot {
-  width: 26px; height: 5px; border-radius: 999px;
-  background: rgba(0, 0, 132, .22);
-  transition: width .2s ease, background-color .2s ease;
+  width: 26px; height: 6px; border-radius: 999px;
+  background: rgba(0, 0, 132, .25);
+  border: 0; padding: 0; cursor: pointer;
+  transition: width .25s ease, background-color .25s ease;
 }
-.hero__dot.is-active { width: 40px; background: var(--navy); }
+.hero__dot:hover { background: rgba(0, 0, 132, .5); }
+.hero__dot.is-active { width: 44px; background: var(--navy); }
 
 /* ---------- Szybki dostęp ---------- */
-.quick { background: #fff; }
+.quick { position: relative; background: #fff; overflow: hidden; }
+.quick .container { position: relative; }
+.quick__pattern {
+  position: absolute;
+  top: -140px; bottom: -140px; left: 0; right: 0;
+  background-image: url("../img/pattern-zojo.svg");
+  background-size: 300px auto;
+  opacity: .5;
+  pointer-events: none;
+  will-change: transform;
+}
 .quick__grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -422,10 +451,13 @@ html.no-js .nav__item:focus-within .nav__sub {
 /* ---------- Statystyki ---------- */
 .stats { position: relative; background: #fff; overflow: hidden; }
 .stats__pattern {
-  position: absolute; inset: 0;
+  position: absolute;
+  top: -140px; bottom: -140px; left: 0; right: 0;
   background-image: url("../img/pattern-zojo.svg");
   background-size: 300px auto;
+  opacity: .5;
   pointer-events: none;
+  will-change: transform;
 }
 .stats .container { position: relative; }
 .stats__grid {
@@ -712,6 +744,7 @@ html.no-js .reveal { opacity: 1; transform: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .donut__value { transition: none; }
   .btn, .quick__card, .news__card, .partners__card { transition: none; }
+  .hero__slide { transition: opacity .3s ease; animation: none !important; }
 }
 
 /* ---------- Wersja kontrastowa (WCAG) ---------- */
@@ -749,6 +782,7 @@ body.contrast .footer__social a, body.contrast .search-toggle {
 body.contrast img { filter: grayscale(1) contrast(1.1); }
 body.contrast .header__brand img { filter: brightness(0) invert(1); }
 body.contrast .hero__bg { display: none; }
+body.contrast .stats__pattern, body.contrast .quick__pattern { display: none; }
 body.contrast .hero__overlay { background: #000 !important; }
 body.contrast .hero__dot { background: rgba(255, 239, 0, .3) !important; }
 body.contrast .hero__dot.is-active { background: #ffef00 !important; }
